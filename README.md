@@ -139,4 +139,4 @@ Here's an example of how the body content for the driver details page was genera
     </ul>
 </div>
 ```
-![Screenshot of Driver Details Page](./images/driver_details.png)
+![Screenshot of Driver Details Page](./images/driver_details1.png)
