@@ -6,9 +6,6 @@ During my software development course at the Tech Academy, I participated in a 2
 
 https://user-images.githubusercontent.com/96323360/163662949-bf91f0ca-1daa-43cb-bac8-0850d24f54f8.mp4
 
-
-Below are some more in-depth descriptions of what I learned and did during this live project.
-
 ## Back End Stories
 I chose to develop a Formula 1 related app that would allow users to enter race results into a database, view those results all at once or filtered for a single driver or team, update those results if any changes needed to be made, and delete results if necessary.
 
