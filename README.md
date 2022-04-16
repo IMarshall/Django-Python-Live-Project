@@ -10,7 +10,8 @@ I chose to develop a Formula 1 related app that would allow users to enter race 
 ### Django Modelform for Editing Results
 For one user story, I was asked to use a Django Modelform to allow users to view a result and edit it if desired. I wanted to use the same views.py function to display the current result and to handle any edits made to that result by the user. I was able to do that by checking the Http request method. I also needed to validate the form by checking to make sure it didn't duplicate an already existing result, and calculate the new point total.
 
-`def edit_result(request, pk):
+```
+def edit_result(request, pk):
     obj = get_object_or_404(Result, id=pk)
 
     form = ResultForm(request.POST or None, instance = obj)
@@ -67,12 +68,14 @@ For one user story, I was asked to use a Django Modelform to allow users to view
     
     # SEND THE USER TO THE EDITRESULT PAGE IF THEY DIDN'T COME HERE FROM FORM SUBMISSION (METHOD != POST)
     else:
-        return render(request, "Formula1/Formula1_editResult.html", context)`
+        return render(request, "Formula1/Formula1_editResult.html", context)
+```
 
 ### Render Team Details Page
 I created a details page for drivers and one for teams, so that when a user clicks on a driver/team, they'll be taken to a page where all information for that driver/team will be displayed. This was a little more complicated for teams because I needed to use the results model (which may contain many different race results for one driver), to create a list of a team's drivers without duplicates, and combine those driver's points totals into one team total for each race, as well as a full season total. Learning the best way to pass all of that info to the template and then access it within the template was challenging, but fun.
 
-`def team_details(request, value):
+```
+def team_details(request, value):
     data = Result.results.all().filter(Current_Team=value).order_by('Race', 'Race_Type')
     drivers = []
     races = {}
@@ -104,4 +107,5 @@ I created a details page for drivers and one for teams, so that when a user clic
         'data': data,
         'races': races
     }
-    return render(request, "Formula1/Formula1_teamDetails.html", context)`
+    return render(request, "Formula1/Formula1_teamDetails.html", context)
+    ```
