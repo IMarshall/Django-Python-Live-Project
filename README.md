@@ -1,4 +1,4 @@
-# Live-Project-1
+# Live Project 1
 ## Introduction
 During my software development course at the Tech Academy, I participated in a 2-week code sprint during which I was tasked to create a Django MVT web app with basic CRUD functionality. In addition to building the back end of the app, I designed the front end using Django template inheritance, block tags, and template tags. The entire app was integrated into a larger website and I used Git as my VCS to write, test, and ultimately merge my code into the master branch. During the sprint, I worked with a team of other students and instructors, using Agile methodologies to manage the project as a whole.
 
@@ -8,7 +8,7 @@ Below are some more in-depth descriptions of what I learned and did during this 
 I chose to develop a Formula 1 related app that would allow users to enter race results into a database, view those results all at once or filtered for a single driver or team, update those results if any changes needed to be made, and delete results if necessary.
 
 ### Django Modelform for Editing Results
-For one user story, I was asked to use a Django Modelform to allow users to view a result and edit it if desired. I wanted to use the same views.py function to display the current result and to handle any edits made to that result by the user. I was able to do that by checking the Http request method. I also needed to validate the form by checking to make sure it didn't duplicate an already existing result, and calculate the new point total.
+For one user story, I was asked to use a Django Modelform to allow users to view a result and edit it if desired. I wanted to use the same views.py function to display the current result and to handle any edits made to that result by the user. I was able to do that by checking the HTTP request method. I also needed to validate the form by checking to make sure it didn't duplicate an already existing result, and calculate the new point total.
 
 ```
 def edit_result(request, pk):
@@ -108,4 +108,48 @@ def team_details(request, value):
         'races': races
     }
     return render(request, "Formula1/Formula1_teamDetails.html", context)
-    ```
+```
+## Front End Stories
+I used Bootstrap 4 and minimal custom CSS to style my app. Each HTML page used template inheritance to extend from a base template, include a navbar and footer, and place individualized content between block tags. Learning to use template tags to access data sent from the view, including iterating through nested lists and dictionaries, was the biggest challenge of this part of the project.
+
+Here's an example of how the content for the driver details page was generated and what it looks like:
+
+```
+{% extends "Formula1/Formula1_base.html" %}
+
+{% load static %}
+
+{% block title %}Formula 1{% endblock %}
+
+{% block header %}{{ summary.0 }}{% endblock %}
+
+{% block content %}
+
+<div class="card mx-auto text-dark bg-secondary mb-3 border border-dark" style="width: 18rem;">
+    <img class="card-img-top driver-img" src="{% static summary.3 %}" alt="Card image cap">
+    <div class="card-body text-white bg-dark border-top border-white">
+        <h5 class="card-title">{{ summary.0 }}</h5>
+        <p class="card-text">Team: {{ summary.1 }}<br>Total Points: {{ summary.2 }}</p>
+    </div>
+    <ul class="list-group list-group-flush text-white bg-dark">
+        {% for result in data %}
+            <li class="list-group-item text-white bg-dark border-top border-white race-name">
+                {{ result.Race }} -
+                {% if result.Race_Type == 'Sprint Race' %}
+                    <span class="badge badge-warning">Sprint</span>
+                {% else %}
+                    {% if result.Fastest_Lap %}
+                        <span class="badge badge-primary">Fastest Lap</span>
+                    {% endif %}
+                {% endif %}
+                <span class="badge badge-success">Pos: {{ result.Finishing_Position }}</span>
+                <span class="badge badge-info">{{ result.Points_Earned }} Points</span>
+            </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% endblock %}
+```
+![Screenshot of Driver Details Page](./images/driver_details.png)
