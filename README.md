@@ -112,19 +112,9 @@ def team_details(request, value):
 ## Front End Stories
 I used Bootstrap 4 and minimal custom CSS to style my app. Each HTML page used template inheritance to extend from a base template, include a navbar and footer, and place individualized content between block tags. Learning to use template tags to access data sent from the view, including iterating through nested lists and dictionaries, was the biggest challenge of this part of the project.
 
-Here's an example of how the content for the driver details page was generated and what it looks like:
+Here's an example of how the body content for the driver details page was generated and what it looks like:
 
 ```
-{% extends "Formula1/Formula1_base.html" %}
-
-{% load static %}
-
-{% block title %}Formula 1{% endblock %}
-
-{% block header %}{{ summary.0 }}{% endblock %}
-
-{% block content %}
-
 <div class="card mx-auto text-dark bg-secondary mb-3 border border-dark" style="width: 18rem;">
     <img class="card-img-top driver-img" src="{% static summary.3 %}" alt="Card image cap">
     <div class="card-body text-white bg-dark border-top border-white">
@@ -148,8 +138,5 @@ Here's an example of how the content for the driver details page was generated a
         {% endfor %}
     </ul>
 </div>
-
-
-{% endblock %}
 ```
 ![Screenshot of Driver Details Page](./images/driver_details.png)
