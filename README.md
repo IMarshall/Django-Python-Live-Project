@@ -1,6 +1,6 @@
 # Live Project 1
 ## Introduction
-During my software development course at the Tech Academy, I participated in a 2-week code sprint during which I was tasked to create a Django MVT web app with basic CRUD functionality. In addition to building the back end of the app, I designed the front end using Django template inheritance, block tags, and template tags. The entire app was integrated into a larger website and I used Git as my VCS to write, test, and ultimately merge my code into the master branch. During the sprint, I worked with a team of other students and instructors, using Agile methodologies to manage the project as a whole.
+During my software development course at the Tech Academy, I participated in a 2-week code sprint during which I was tasked to create a Django MVT web app with basic CRUD functionality. In addition to building the [back end](https://github.com/IMarshall/Live-Project-1/tree/main#back-end-stories) of the app, I designed the [front end](https://github.com/IMarshall/Live-Project-1/tree/main#front-end-stories) using Django template inheritance, block tags, and template tags. The entire app was integrated into a larger website and I used [Git as my VCS](https://github.com/IMarshall/Live-Project-1/tree/main#Version-Control-Using-Git) to write, test, and ultimately merge my code into the master branch. During the sprint, I worked with a team of other students and instructors, using [Agile methodologies](https://github.com/IMarshall/Live-Project-1/tree/main#Agile-Methodologies) to manage the project as a whole.
 
 Below are some more in-depth descriptions of what I learned and did during this live project.
 
@@ -140,3 +140,9 @@ Here's an example of how the body content for the driver details page was genera
 </div>
 ```
 ![Screenshot of Driver Details Page](./images/driver_details1.png)
+
+## Version Control - Using Git
+While I had taken a course on Git and felt like I understood version control well before this project, putting it into practice with a large project like this gave me the experience to become comfortable and confident using it. For each user story I worked on I created a new branch from the master, wrote and tested my new code within that branch, and eventually commited those changes and submitted pull requests to be merged into the master branch.
+
+## Agile Methodologies
+During the two-week sprint, I participated in daily standups via Discord held at a regular time. Each daily standup was led by a Scrum Master and each team member was expected to share what they worked on recently, any roadblocks holding them back, and what they were planning to work on next. In addition to daily standups, I submitted a daily update to my instructor via email at the end of each day. On Fridays, all team members participated in a code retrospective, in which we discussed what went well and what didn't during the week and how we could improve team communication and coordination to increase productivity. Doing all of this helped me to get familiar with Agile/Scrum methods and see how beneficial they can be to the development process.
