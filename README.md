@@ -7,7 +7,7 @@ I participated in a 2-week code sprint during which I was tasked to create a Dja
 https://user-images.githubusercontent.com/96323360/163662949-bf91f0ca-1daa-43cb-bac8-0850d24f54f8.mp4
 
 ## Back End Stories
-I chose to develop a Formula 1 related app that would allow users to enter race results into a database, view those results all at once or filtered for a single driver or team, update those results if any changes needed to be made, and delete results if necessary.
+I developed a Formula 1 related app that would allow users to enter race results into a database, view those results all at once or filtered for a single driver or team, update those results if any changes needed to be made, and delete results if necessary.
 
 ### Django Modelform for Editing Results
 For one user story, I was asked to use a Django Modelform to allow users to view a result and edit it if desired. I wanted to use the same views.py function to display the current result and to handle any edits made to that result by the user. I was able to do that by checking the HTTP request method. I also needed to validate the form by checking to make sure it didn't duplicate an already existing result, and calculate the new point total.
