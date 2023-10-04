@@ -1,4 +1,4 @@
-# Django/Python Live Project
+# Django/Python Web App
 ## Introduction
 I participated in a 2-week code sprint during which I was tasked to create a Django MVT web app with basic CRUD functionality. In addition to building the [back end](https://github.com/IMarshall/Django-Python-MVT-Project/tree/main#back-end-stories) of the app, I designed the [front end](https://github.com/IMarshall/Django-Python-MVT-Project/tree/main#front-end-stories) using Django template inheritance, block tags, and template tags. The entire app was integrated into a larger website and I used [Git as my VCS](https://github.com/IMarshall/Django-Python-MVT-Project/tree/main#Version-Control---Using-Git) to write, test, and ultimately merge my code into the master branch. During the sprint, I worked with a team of other developers using [Agile methodologies](https://github.com/IMarshall/Django-Python-MVT-Project/tree/main#Agile-Methodologies) to manage the project as a whole.
 
